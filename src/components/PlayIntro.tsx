@@ -109,8 +109,6 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
       >
         <img
           src={profile.portrait.src}
-          srcSet={profile.portrait.srcSet}
-          sizes="100vw"
           alt=""
           className="h-[80vh] w-auto max-w-none object-contain object-bottom"
         />

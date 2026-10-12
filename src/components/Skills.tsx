@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { skillCategories, skillEvidence, type Skill } from '../data/portfolio';
 import { EASE, SectionHeading } from './fx';
 
-const HUES = ['#ff3d5a', '#4cc9ff', '#46e3a8', '#ffb547', '#b98bff', '#ff8a5c', '#7ee0ff'];
+const HUES = ['#ff3d5a', '#4cc9ff', '#46e3a8', '#ffb547', '#b98bff', '#38bdf8', '#a78bfa', '#f43f5e', '#34d399'];
 
 export default function Skills() {
   const [cat, setCat] = useState(0);

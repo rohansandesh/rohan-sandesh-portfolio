@@ -1,11 +1,10 @@
 import { useState, useCallback } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { viewerProfiles, type ProfileId, type Project } from './data/portfolio';
+import { viewerProfiles, type ProfileId, type Project, type SectionId } from './data/portfolio';
 import { SmoothScrollProvider } from './hooks/smoothScroll';
 
 // Cinematic overlays
 import OpeningSequence from './components/OpeningSequence';
-import ProfileSelector from './components/ProfileSelector';
 import PlayIntro from './components/PlayIntro';
 import ResumeModal from './components/ResumeModal';
 import ProjectModal from './components/ProjectModal';
@@ -21,9 +20,8 @@ import About from './components/About';
 import ContinueWatching from './components/ContinueWatching';
 import Seasons from './components/Seasons';
 import Originals from './components/Originals';
-import TopPicks from './components/TopPicks';
+import Services from './components/Services';
 import Skills from './components/Skills';
-import Achievements from './components/Achievements';
 import ResumeViewer from './components/ResumeViewer';
 import FinalCTA from './components/FinalCTA';
 
@@ -36,9 +34,9 @@ export default function App() {
   const [showResume, setShowResume] = useState(false);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
-  const profile = viewerProfiles.find((p) => p.id === profileId)!;
+  const profile = viewerProfiles.find((p: { id: ProfileId }) => p.id === profileId)!;
 
-  const handleOpeningDone = useCallback(() => setPhase('selecting'), []);
+  const handleOpeningDone = useCallback(() => setPhase('watching'), []);
   const handleProfilePick = useCallback((id: ProfileId) => {
     setProfileId(id);
     setPhase('watching');
@@ -63,11 +61,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {phase === 'selecting' && (
-          <ProfileSelector key="selector" onPick={handleProfilePick} />
-        )}
-      </AnimatePresence>
+
 
       <AnimatePresence>
         {showIntro && (
@@ -94,31 +88,22 @@ export default function App() {
 
       {/* ── Main portfolio (always mounted so state & scroll persist) ── */}
       <div aria-hidden={phase !== 'watching'}>
-        <Navbar
-          order={profile.order}
-          profileId={profileId}
-          onSwitch={handleSwitch}
-        />
+        <Navbar order={profile.order} />
 
         <main>
-          <Hero
-            onPlay={handlePlay}
-            onResume={() => setShowResume(true)}
-            profileId={profileId}
-          />
+          <Hero onPlay={handlePlay} />
 
           {/* "Continue Exploring" progress rail */}
           <ContinueWatching order={profile.order} />
 
           {/* Dynamically ordered sections per viewer profile */}
-          {profile.order.map((id) => (
+          {profile.order.map((id: SectionId) => (
             <Scene key={id} id={id}>
               {id === 'about' && <About />}
               {id === 'journey' && <Seasons />}
               {id === 'originals' && <Originals onOpen={(p) => setActiveProject(p)} />}
-              {id === 'picks' && <TopPicks />}
+              {id === 'services' && <Services onOpenProject={(p) => setActiveProject(p)} />}
               {id === 'skills' && <Skills />}
-              {id === 'moments' && <Achievements />}
               {id === 'story' && <ResumeViewer onView={() => setShowResume(true)} />}
             </Scene>
           ))}

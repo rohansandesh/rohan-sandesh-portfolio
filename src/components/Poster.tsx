@@ -99,20 +99,20 @@ export function ProjectArt({ project, className = '' }: { project: Project; clas
           </g>
         )}
 
-        {project.motif === 'mess' && (
+        {project.motif === 'contacts' && (
           <g fill="none" stroke={a}>
-            {/* Food management / meal nodes architecture */}
-            <circle cx="275" cy="120" r="64" strokeWidth="2" strokeOpacity="0.85" />
-            <circle cx="275" cy="120" r="46" strokeWidth="1.4" strokeOpacity="0.4" strokeDasharray="8 6" />
-            <path d="M255 100 v40 M250 100 h10 M250 114 h10" strokeWidth="2" strokeLinecap="round" />
-            <path d="M295 100 v40 C295 116 304 116 304 100 v40" strokeWidth="2" strokeLinecap="round" />
-            <g transform="translate(180 190)">
-              <circle cx="20" cy="20" r="14" strokeWidth="1.5" strokeOpacity="0.6" />
-              <line x1="34" x2="68" y1="20" y2="20" strokeWidth="2" strokeOpacity="0.4" />
-              <circle cx="82" cy="20" r="14" strokeWidth="1.5" strokeOpacity="0.6" />
-              <line x1="96" x2="130" y1="20" y2="20" strokeWidth="2" strokeOpacity="0.4" />
-              <circle cx="144" cy="20" r="14" strokeWidth="1.5" strokeOpacity="0.6" fill={a} fillOpacity="0.3" />
-            </g>
+            {/* Address book / contact cards & search node motif */}
+            <rect x="200" y="45" width="150" height="150" rx="14" strokeWidth="2" strokeOpacity="0.85" />
+            <path d="M200 78 h150" strokeWidth="1.6" strokeOpacity="0.7" />
+            {/* User avatar silhouette */}
+            <circle cx="275" cy="115" r="22" strokeWidth="1.8" strokeOpacity="0.8" fill={a} fillOpacity="0.12" />
+            <path d="M255 152 C255 138 295 138 295 152" strokeWidth="1.8" strokeLinecap="round" strokeOpacity="0.8" />
+            {/* Contact row lines */}
+            <line x1="225" x2="325" y1="168" y2="168" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.45" />
+            <line x1="240" x2="310" y1="180" y2="180" strokeWidth="2" strokeLinecap="round" strokeOpacity="0.3" />
+            {/* Search filter circle node */}
+            <circle cx="330" cy="62" r="6" strokeWidth="1.8" strokeOpacity="0.9" fill={a} fillOpacity="0.3" />
+            <line x1="334" x2="340" y1="66" y2="72" strokeWidth="1.8" strokeLinecap="round" strokeOpacity="0.9" />
           </g>
         )}
       </svg>

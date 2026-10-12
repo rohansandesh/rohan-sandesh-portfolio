@@ -1,6 +1,6 @@
 /**
  * Central portfolio data for Rohan Sandesh.
- * Every section, season, episode and original reads from this file.
+ * Every section, season, episode, original, and service reads from this file.
  */
 
 export type Palette = { from: string; via: string; to: string; accent: string };
@@ -14,8 +14,10 @@ export const profile = {
   originalLabel: 'A SANDESH ORIGINAL',
   role: 'Full-Stack Developer',
   tagline: ['Learning', 'Building', 'Inspiring'],
+  homeIntro:
+    "I'm an Information Technology undergraduate who enjoys turning ideas into practical digital solutions. From building full-stack web applications to creating thoughtful designs and well-structured documentation, I enjoy combining technology, creativity, and problem-solving to build meaningful things.",
   intro:
-    'A B.Tech Information Technology student at Rajagiri School of Engineering & Technology, Kochi (CGPA 9.10). Building database-driven web applications and scalable full-stack platforms with Node.js, Express, Django, React, Oracle Database and MongoDB.',
+    "I'm an Information Technology undergraduate who enjoys turning ideas into practical digital solutions. From building full-stack web applications to creating thoughtful designs and well-structured documentation, I enjoy combining technology, creativity, and problem-solving to build meaningful things.",
   location: 'Kochi, Kerala, India',
   email: 'rohansandesh840@gmail.com',
   links: {
@@ -24,12 +26,69 @@ export const profile = {
   },
   resumePdf: '/resume.pdf',
   portrait: {
-    src: '/assets/rohan-640.webp',
-    srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
+    src: '/assets/rohan-front.png',
     alt: 'Portrait of Rohan Sandesh',
   },
-  interests: ['Full-Stack Web Development', 'AI & Machine Learning', 'Database Systems & Cloud'],
+  homePortrait: {
+    src: '/assets/rohan-left.png',
+    alt: 'Portrait of Rohan Sandesh looking left',
+  },
+  aboutPortrait: {
+    src: '/assets/rohan-right.png',
+    alt: 'Portrait of Rohan Sandesh looking right',
+  },
+  interests: [
+    'Full-Stack Web Development',
+    'Graphic Designing',
+    'Technical Documentation',
+    'AI & Machine Learning',
+    'Database Systems & Cloud',
+  ],
 };
+
+export const aboutContent = {
+  paragraphs: [
+    "I'm an Information Technology undergraduate who enjoys turning ideas into practical digital solutions. From building full-stack web applications to documenting events, coordinating with teams, and creating visual designs, I enjoy exploring different ways technology and creativity can come together.",
+    "I'm always looking for opportunities to learn, experiment, and build something meaningful—whether it's writing code, organizing information, or designing something from scratch.",
+    "Learning. Building. Inspiring. That's the mindset I bring to every project I take on.",
+  ],
+  motto: 'LEARNING. BUILDING. INSPIRING.',
+};
+
+export const identityCards = [
+  {
+    id: 'build',
+    number: '01',
+    title: 'BUILD',
+    accent: '#ff3d5a',
+    tagline: 'Practical Technical Solutions',
+    description: 'Full-stack development, web applications, and practical technical solutions.',
+  },
+  {
+    id: 'document',
+    number: '02',
+    title: 'DOCUMENT',
+    accent: '#4cc9ff',
+    tagline: 'Structured Records & Reports',
+    description: 'Technical documentation, event reporting, information organization, and structured records.',
+  },
+  {
+    id: 'design',
+    number: '03',
+    title: 'DESIGN',
+    accent: '#ffb547',
+    tagline: 'Visual Communication & Collateral',
+    description: 'Graphic design, visual communication, and creative layouts.',
+  },
+  {
+    id: 'collaborate',
+    number: '04',
+    title: 'COLLABORATE',
+    accent: '#46e3a8',
+    tagline: 'Coordination & Event Leadership',
+    description: 'Team coordination, event participation, communication, and working with different people.',
+  },
+];
 
 export const education = [
   {
@@ -38,7 +97,7 @@ export const education = [
     degree: 'Bachelor of Technology — Information Technology',
     period: '2024 – Present',
     score: 'CGPA 9.10',
-    detail: 'Branch topper in first semester • Merit award recipient',
+    detail: 'First-semester branch topper (CGPA 9.76) • Official CGPA after four semesters: 9.10',
   },
   {
     school: 'Mar Thoma Residential School',
@@ -46,7 +105,7 @@ export const education = [
     degree: 'ISC (Class XII) — Science',
     period: '2020 – 2022',
     score: '97%',
-    detail: '3rd Rank in School • Mr. Binoj Varghese Kattayickal Memorial Merit Award',
+    detail: '3rd Rank in School • Mr. Binoj K. Varghese Kattayickal Memorial Merit Award for Biology topper',
   },
   {
     school: 'Mar Thoma Residential School',
@@ -74,7 +133,7 @@ export const experience = [
     company: 'Voleergo Solutions LLP',
     role: 'Python Full Stack Development Intern',
     place: 'Kochi, Kerala',
-    period: 'May 2026',
+    period: '4 May 2026 – 15 May 2026',
     points: [
       'Built responsive frontend interfaces and Django backend features to master the full lifecycle of a database-driven web application.',
       'Developed REST APIs, authentication workflows, and SQLite database schemas; leveraged Git, GitHub, and Postman for API testing and version control.',
@@ -97,40 +156,10 @@ export type Project = {
   metrics: Metric[];
   github?: string;
   palette: Palette;
-  motif: 'tasks' | 'bolt' | 'attendance' | 'mess';
+  motif: 'bolt' | 'attendance' | 'tasks' | 'contacts';
 };
 
 export const projects: Project[] = [
-  {
-    id: 'task-manager',
-    title: 'Task Manager',
-    year: '2026',
-    genre: 'Full-Stack • Node.js • Auth & Caching',
-    logline: 'A full-stack task manager featuring session-based authentication, user-isolated MongoDB storage, and Weather API integration with rate limiting and caching.',
-    stack: ['Node.js', 'Express.js', 'EJS', 'MongoDB', 'Mongoose'],
-    build: [
-      'Completed eight progressive tasks spanning frontend interfaces, server-side routing, database schema modeling, and session-based authentication.',
-      'Built user registration, password hashing, session management, and user-isolated task storage using MongoDB and Mongoose.',
-      'Integrated a third-party Weather API with rate limiting, custom Express middleware, in-memory caching, and scheduled background tasks.',
-    ],
-    features: [
-      'Registration, secure login & session-based authentication',
-      'User-isolated task storage with priorities and due dates',
-      'External Weather API integration with rate limiting',
-      'Custom Express middleware & server-side caching',
-      'Scheduled background maintenance jobs',
-    ],
-    metrics: [
-      { value: '8', label: 'progressive tasks completed' },
-      { value: '100%', label: 'session-isolated data privacy' },
-      { value: 'Cached', label: 'rate-limited weather API' },
-      { value: 'CRUD', label: 'full task lifecycle management' },
-      { value: 'Zero', label: 'unauthorized route access' },
-    ],
-    github: 'https://github.com/rohansandesh',
-    palette: { from: '#2a0610', via: '#7a0f24', to: '#0b0710', accent: '#ff3d5a' },
-    motif: 'tasks',
-  },
   {
     id: 'ev-charging-system',
     title: 'EV Charging System',
@@ -157,16 +186,16 @@ export const projects: Project[] = [
       { value: 'Live', label: 'charger availability status' },
       { value: 'Automated', label: 'session billing with GST' },
     ],
-    github: 'https://github.com/rohansandesh',
+    github: 'https://github.com/rohansandesh/EV-Charging-System',
     palette: { from: '#1a0d02', via: '#8a4a07', to: '#0a0806', accent: '#ffb547' },
     motif: 'bolt',
   },
   {
     id: 'student-attendance',
-    title: 'Student Attendance System',
-    year: '2025',
+    title: 'Student Attendance Management System',
+    year: '2026',
     genre: 'Web App • Academic Systems • Security',
-    logline: 'A web-based attendance management system with subject and date filtering, faculty authentication, and secure PDO prepared statements.',
+    logline: 'A web-based attendance management system with subject and date filtering, faculty authentication, and secure database interactions using prepared statements.',
     stack: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'PDO'],
     build: [
       'Created a secure web application for faculty authentication, student record rosters, and daily subject-wise attendance logging.',
@@ -187,39 +216,69 @@ export const projects: Project[] = [
       { value: 'Real-time', label: 'eligibility calculations' },
       { value: 'Modular', label: 'student & faculty workflows' },
     ],
-    github: 'https://github.com/rohansandesh',
+    github: 'https://github.com/rohansandesh/Student-Attendance-Management-System',
     palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
     motif: 'attendance',
   },
   {
-    id: 'messmate',
-    title: 'MessMate',
+    id: 'task-manager',
+    title: 'Task Manager',
     year: '2026',
-    genre: 'Full-Stack • SPA • REST API',
-    logline: 'A modern hostel & student mess management application built with a React single-page client, Tailwind CSS, and an Express.js REST API.',
-    stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express.js'],
+    genre: 'Full-Stack • Node.js • Auth & Caching',
+    logline: 'A full-stack task manager featuring session-based authentication, user-isolated MongoDB storage, and Weather API integration with rate limiting and caching.',
+    stack: ['Node.js', 'Express.js', 'EJS', 'MongoDB', 'Mongoose'],
     build: [
-      'Built a responsive, fluid user interface leveraging Vite, React modular components, and modern Tailwind CSS design tokens.',
-      'Engineered Express.js REST API endpoints consumed asynchronously by the front-end client for real-time meal recording and budgeting.',
-      'Implemented client-side caching and responsive state management for seamless mobile and desktop usage.',
+      'Completed eight progressive tasks spanning frontend interfaces, server-side routing, database schema modeling, and session-based authentication.',
+      'Built user registration, password hashing, session management, and user-isolated task storage using MongoDB and Mongoose.',
+      'Integrated a third-party Weather API with rate limiting, custom Express middleware, in-memory caching, and scheduled background tasks.',
     ],
     features: [
-      'Single-page application with modular React architecture',
-      'Express.js backend REST API endpoints',
-      'Tailwind CSS responsive design system',
-      'Daily meal logging & student expense tracking',
-      'Real-time updates & error resilience',
+      'Registration, secure login & session-based authentication',
+      'User-isolated task storage with priorities and due dates',
+      'External Weather API integration with rate limiting',
+      'Custom Express middleware & server-side caching',
+      'Scheduled background maintenance jobs',
     ],
     metrics: [
-      { value: 'React + Vite', label: 'blazing-fast client app' },
-      { value: 'REST API', label: 'Express backend architecture' },
-      { value: 'Responsive', label: 'mobile-first layout' },
-      { value: 'Modular', label: 'reusable component design' },
-      { value: '100%', label: 'custom CSS & Tailwind tokens' },
+      { value: '8', label: 'progressive tasks completed' },
+      { value: '100%', label: 'session-isolated data privacy' },
+      { value: 'Cached', label: 'rate-limited weather API' },
+      { value: 'CRUD', label: 'full task lifecycle management' },
+      { value: 'Zero', label: 'unauthorized route access' },
     ],
-    github: 'https://github.com/rohansandesh',
+    github: 'https://github.com/rohansandesh/cognifyz-fullstack-internship',
+    palette: { from: '#2a0610', via: '#7a0f24', to: '#0b0710', accent: '#ff3d5a' },
+    motif: 'tasks',
+  },
+  {
+    id: 'digital-contact-book',
+    title: 'Digital Contact Book',
+    year: '2026',
+    genre: 'Full-Stack • Django • React SPA',
+    logline: 'A full-stack contact management application with complete CRUD workflows, Django REST APIs, SQLite storage, and a responsive search interface.',
+    stack: ['Django', 'React', 'REST APIs', 'SQLite', 'Python'],
+    build: [
+      'Developed a responsive React frontend coupled to a Python Django backend as part of full-stack engineering at Voleergo Solutions.',
+      'Implemented robust REST API endpoints supporting complete CRUD operations (create, read, update, delete) for contact records.',
+      'Designed real-time client-side search and filtering alongside SQLite relational persistence and schema validation.',
+    ],
+    features: [
+      'Full CRUD contact lifecycle management',
+      'Django REST API backend with modular views',
+      'Reactive search & dynamic client-side filtering',
+      'SQLite database integration with relational schema',
+      'Clean component-driven user interface',
+    ],
+    metrics: [
+      { value: 'CRUD', label: 'complete record lifecycle' },
+      { value: 'REST API', label: 'Django backend endpoints' },
+      { value: 'Instant', label: 'live search & filtering' },
+      { value: 'SQLite', label: 'structured data storage' },
+      { value: 'Voleergo', label: 'internship capstone production' },
+    ],
+    github: 'https://github.com/rohansandesh/digital-contact-book',
     palette: { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' },
-    motif: 'mess',
+    motif: 'contacts',
   },
 ];
 
@@ -235,23 +294,23 @@ export type Achievement = {
 export const achievements: Achievement[] = [
   {
     id: 'branch-topper',
-    title: 'Branch Topper',
+    title: 'First-Semester Branch Topper',
     org: 'B.Tech IT, RSET Kochi',
-    detail: 'Ranked 1st in the department for the first semester, receiving the College Merit Award.',
+    detail: 'Ranked 1st in department for semester one with 9.76 CGPA, awarded College Merit recognition.',
     laurel: 'Academic Distinction',
   },
   {
     id: 'cgpa-910',
-    title: 'CGPA 9.10',
-    org: 'First 4 Semesters',
-    detail: 'Consistently maintained top percentile academic performance across foundational engineering semesters.',
+    title: 'Official CGPA 9.10',
+    org: 'First 4 Semesters, RSET',
+    detail: 'Consistently maintained top percentile academic performance across four foundational engineering semesters.',
     laurel: 'Consistent Excellence',
   },
   {
     id: 'isc-topper',
     title: '97% in ISC (Class XII)',
     org: 'Mar Thoma Residential School',
-    detail: 'Secured 3rd rank in school and recipient of the Mr. Binoj Varghese Kattayickal Memorial Merit Award.',
+    detail: 'Secured 3rd rank in school and recipient of the Mr. Binoj K. Varghese Kattayickal Memorial Merit Award for Biology topper.',
     laurel: '3rd Rank & Merit Award',
   },
   {
@@ -263,7 +322,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: 'techkshetra-lead',
-    title: 'Core Committee, Documentation',
+    title: 'Documentation Core Committee',
     org: 'Techkshetra 2026, RSET',
     detail: 'Headed documentation, reporting, and event information management for the inter-college national technical fest.',
     laurel: 'Technical Leadership',
@@ -347,12 +406,35 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'productivity',
     title: 'Productivity & Leadership',
-    subtitle: 'Documentation, reporting & management',
+    subtitle: 'Spreadsheet management & event logistics',
     skills: [
       { name: 'Advanced Excel', mono: 'Xl' },
-      { name: 'Technical Documentation', mono: 'Doc' },
       { name: 'Event Management', mono: 'Ev' },
       { name: 'Data Entry', mono: 'De' },
+      { name: 'Data Cleaning', mono: 'Dc' },
+    ],
+  },
+  {
+    id: 'documentation',
+    title: 'Documentation & Communication',
+    subtitle: 'Technical writing, reporting & information coordination',
+    skills: [
+      { name: 'Technical Documentation', mono: 'Doc', note: 'Core' },
+      { name: 'Report Writing', mono: 'Rw' },
+      { name: 'Event Documentation', mono: 'Ed' },
+      { name: 'Information Management', mono: 'Im' },
+      { name: 'Coordination & Communication', mono: 'Cc' },
+    ],
+  },
+  {
+    id: 'graphic-design',
+    title: 'Graphic Design & Creativity Tools',
+    subtitle: 'Visual design, creative tools & communication',
+    skills: [
+      { name: 'Graphic Designing', mono: 'Gd', note: 'Visual' },
+      { name: 'Canva', mono: 'Cv' },
+      { name: 'Layout & Typography', mono: 'Lt' },
+      { name: 'Visual Communication', mono: 'Vc' },
     ],
   },
   {
@@ -372,19 +454,29 @@ export const skillCategories: SkillCategory[] = [
 export const skillEvidence: Record<string, string[]> = {
   Python: ['Voleergo Solutions Internship', 'G-Tec Python & Django Certified', 'Academic Coursework'],
   Java: ['Object-Oriented Programming at RSET', 'DSA implementations'],
-  JavaScript: ['MessMate (React)', 'Task Manager (Node.js)', 'Attendance System'],
-  React: ['MessMate', 'Voleergo Solutions Internship'],
-  'Tailwind CSS': ['MessMate', 'Portfolio Series'],
-  'Node.js': ['Cognifyz Full-Stack Internship', 'Task Manager', 'EV Charging System', 'MessMate'],
-  'Express.js': ['Task Manager', 'EV Charging System', 'MessMate'],
+  JavaScript: ['Digital Contact Book (React)', 'Task Manager (Node.js)', 'Student Attendance System'],
+  React: ['Digital Contact Book', 'Portfolio Series', 'Voleergo Solutions Internship'],
+  'Tailwind CSS': ['Portfolio Series Web Architecture'],
+  'Node.js': ['Cognifyz Full-Stack Internship', 'Task Manager', 'EV Charging System'],
+  'Express.js': ['Task Manager', 'EV Charging System'],
   Django: ['Voleergo Solutions Internship', 'Digital Contact Book'],
-  'REST APIs': ['Task Manager (Weather API)', 'MessMate API', 'Voleergo Solutions'],
+  'REST APIs': ['Task Manager (Weather API)', 'Digital Contact Book (Django REST)', 'Voleergo Solutions'],
   'Oracle Database': ['EV Charging System (PL/SQL Stored Procedures)'],
   MongoDB: ['Task Manager (Cognifyz Internship)', 'Mongoose ODM Schemas'],
   MySQL: ['Student Attendance Management System', 'Academic DBMS'],
   Git: ['All personal & team projects', 'Version control on GitHub'],
-  'Technical Documentation': ['RSET IEDC & IIC SEED', 'Techkshetra 2026 Core Committee'],
-  'Advanced Excel': ['G-Tec Advanced Excel Certification'],
+  'Technical Documentation': ['RSET IEDC & IIC SEED Reports', 'Techkshetra 2026 Core Committee', 'AAD LCS Report'],
+  'Report Writing': ['IEDC Summit Promotional Campaign Report', 'Institutional Event Logs'],
+  'Event Documentation': ['Techkshetra 2026', 'Abhyanthriki 2025 Sub-Core'],
+  'Information Management': ['RSET IEDC Startup Records', 'College Information Tracking'],
+  'Coordination & Communication': ['Huddle Global 2025 Panel Anchor', 'Council Leadership'],
+  'Advanced Excel': ['G-Tec Advanced Excel Certification', 'Data Cleaning & Standardization Workbook'],
+  'Data Entry': ['Diploma in Data Entry (G-Tec)', 'Structured Record Management'],
+  'Data Cleaning': ['Data Cleaning & Standardization Workbook', 'Data Validation Logic'],
+  'Graphic Designing': ['Aventra Ushers Brand Collateral', 'Business Cards & Event Posters'],
+  Canva: ['Promotional Campaigns', 'Social & Print Media Layouts'],
+  'Layout & Typography': ['Aventra Ushers Business Card', 'Promotional Manpower Packages'],
+  'Visual Communication': ['Event Presentations', 'Branding & Identity Assets'],
   DSA: ['Academic Excellence (CGPA 9.10)', 'Algorithm Implementations in C/C++'],
 };
 
@@ -429,8 +521,8 @@ export const seasons: Season[] = [
       {
         code: 'S01 E02',
         title: 'The Scholar',
-        description: 'ICSE Class X (95.6%) and ISC Class XII (97%), third rank in school and recipient of the Binoj Varghese Memorial Merit Award.',
-        tags: ['ISC 97%', '3rd Rank', 'Merit Award'],
+        description: 'ICSE Class X (95.6%) and ISC Class XII (97%), third rank in school and recipient of the Mr. Binoj K. Varghese Kattayickal Memorial Merit Award for Biology topper.',
+        tags: ['ISC 97%', '3rd Rank', 'Merit Award', 'Biology Topper'],
         runtime: '2020 – 2022',
         palette: violet,
       },
@@ -440,13 +532,13 @@ export const seasons: Season[] = [
     number: 2,
     title: 'Enter: Information Technology',
     period: '2024 – Present',
-    synopsis: 'B.Tech in Information Technology at Rajagiri School of Engineering & Technology (RSET), Kochi. Branch topper and 9.10 CGPA.',
+    synopsis: 'B.Tech in Information Technology at Rajagiri School of Engineering & Technology (RSET), Kochi. Branch topper and 9.10 CGPA after four semesters.',
     episodes: [
       {
         code: 'S02 E01',
         title: 'The Branch Topper',
-        description: 'B.Tech IT at RSET Kochi — topped the first semester with branch topper recognition and maintained a 9.10 CGPA across 4 semesters.',
-        tags: ['RSET Kochi', 'Branch Topper', 'CGPA 9.10'],
+        description: 'B.Tech IT at RSET Kochi — topped the first semester with branch topper recognition (CGPA 9.76) and maintained an official 9.10 CGPA across four completed semesters.',
+        tags: ['RSET Kochi', 'Branch Topper', 'CGPA 9.76', 'CGPA 9.10'],
         runtime: '2024 – Present',
         palette: crimson,
       },
@@ -469,15 +561,15 @@ export const seasons: Season[] = [
       {
         code: 'S03 E01',
         title: 'The Django Chapter',
-        description: 'Python Full Stack Intern at Voleergo Solutions LLP — developed REST APIs, Django backend features, React interfaces, and a Digital Contact Book app.',
+        description: 'Python Full Stack Intern at Voleergo Solutions LLP (4 May 2026 – 15 May 2026) — developed REST APIs, Django backend features, React interfaces, and a Digital Contact Book app with SQLite.',
         tags: ['Python', 'Django', 'React', 'SQLite'],
-        runtime: 'May 2026',
+        runtime: '4 May – 15 May 2026',
         palette: jade,
       },
       {
         code: 'S03 E02',
         title: 'The Enterprise Stack',
-        description: 'Full Stack Development Intern at Cognifyz IT Solutions — built 8 progressive tasks including session authentication, MongoDB, and Weather API integration.',
+        description: 'Full Stack Development Intern at Cognifyz IT Solutions Pvt. Ltd. (July 2026 – August 2026) — built 8 progressive tasks including session authentication, MongoDB, and Weather API integration with caching.',
         tags: ['Node.js', 'Express', 'MongoDB', 'Weather API'],
         runtime: 'Jul – Aug 2026',
         palette: amber,
@@ -488,21 +580,29 @@ export const seasons: Season[] = [
     number: 4,
     title: 'Beyond The Editor',
     period: '2025 – Present',
-    synopsis: 'Leadership, technical documentation, and community organizing across flagship college fests and Kerala Startup Mission events.',
+    synopsis: 'Leadership, technical documentation, event reporting, and community organizing across flagship college fests and Kerala Startup Mission events.',
     episodes: [
       {
         code: 'S04 E01',
         title: 'The Documentarian',
-        description: 'Documentation Team member at RSET IEDC & IIC SEED — managing reports, information tracking, and documentation for startup & innovation programs.',
-        tags: ['IEDC', 'IIC SEED', 'Documentation'],
+        description: 'Documentation Team member at RSET IEDC & IIC SEED — managing official reports, information tracking, and structured documentation for startup & innovation programs.',
+        tags: ['IEDC', 'IIC SEED', 'Documentation', 'Reports'],
         runtime: '2026 – Present',
         palette: ocean,
       },
       {
         code: 'S04 E02',
+        title: 'The Global Stage',
+        description: 'Kerala Startup Mission’s flagship conclave, Huddle Global 2025 — actively managed delegate hospitality and gifting logistics, and anchored a featured panel discussion.',
+        tags: ['Huddle Global 2025', 'KSUM', 'Panel Anchor', 'Hospitality'],
+        runtime: '2025',
+        palette: amber,
+      },
+      {
+        code: 'S04 E03',
         title: 'The Big Stage',
-        description: 'Documentation Core Committee for Techkshetra 2026 fest, Abhyanthriki 2025 subcore, and volunteer/anchor at Kerala Startup Mission Huddle Global 2025.',
-        tags: ['Techkshetra', 'Huddle Global', 'KSUM', 'Anchor'],
+        description: 'Served on the Documentation Core Committee for Techkshetra 2026 national technical fest, building on subcore documentation leadership at Abhyanthriki 2025.',
+        tags: ['Techkshetra 2026', 'Abhyanthriki 2025', 'Documentation Core'],
         runtime: '2025 – 2026',
         palette: violet,
       },
@@ -511,34 +611,190 @@ export const seasons: Season[] = [
   {
     number: 5,
     title: "What's Next",
-    period: 'Now streaming',
-    synopsis: 'Exploring AI/ML, cloud architecture, and seeking software development internship and placement opportunities.',
+    period: 'Ongoing',
+    synopsis: 'Continued full-stack development, exploring AI/ML and cloud architecture, building meaningful digital products, and seeking software development internship and placement opportunities.',
     episodes: [
       {
         code: 'S05 E01',
         title: 'The Next Chapter',
-        description: 'Architecting modern cloud-native systems, exploring AI/ML models, and building high-performance full-stack web platforms.',
-        tags: ['Full-Stack', 'AI / ML', 'System Design'],
-        runtime: 'In production',
+        description: 'Architecting modern cloud-native systems, exploring practical AI/ML models, and building high-performance digital platforms while seeking software engineering opportunities.',
+        tags: ['Full-Stack', 'AI / ML', 'Cloud Architecture', 'Placements'],
+        runtime: 'In Progress',
         palette: crimson,
       },
     ],
   },
 ];
 
-export type TopPick = { label: string; title: string; detail: string; palette: Palette };
+export type ServiceSample = {
+  title: string;
+  type: 'pdf' | 'image' | 'excel' | 'project';
+  path?: string;
+  downloadName?: string;
+  caption?: string;
+  isConcept?: boolean;
+  projectId?: string;
+};
 
-export const topPicks: TopPick[] = [
-  { label: 'Academic high', title: 'CGPA 9.10', detail: 'Branch Topper in 1st Semester • RSET Kochi', palette: crimson },
-  { label: 'Full-stack intern', title: 'Cognifyz Solutions', detail: '8 progressive tasks • Node.js, Express & MongoDB', palette: amber },
-  { label: 'Enterprise DB', title: 'EV Charging System', detail: 'Oracle Database & PL/SQL Stored Procedures', palette: ocean },
-  { label: 'Python intern', title: 'Voleergo Solutions', detail: 'Django REST APIs & React development', palette: jade },
-  { label: 'Web original', title: 'Task Manager', detail: 'Weather API integration, caching & rate limiting', palette: crimson },
-  { label: 'Student leadership', title: 'Head Boy', detail: 'Mar Thoma Residential School', palette: violet },
-  { label: 'Startup ecosystem', title: 'Huddle Global 2025', detail: 'Kerala Startup Mission • Volunteer & Event Anchor', palette: amber },
-  { label: 'School rank', title: '97% in ISC (XII)', detail: '3rd Rank in School • Memorial Merit Award', palette: jade },
-  { label: 'Front-end SPA', title: 'MessMate', detail: 'React, Vite, Tailwind CSS & Express API', palette: ocean },
-  { label: 'Certified credentials', title: '4 Certifications', detail: 'Python & Django, Advanced Excel, Data Entry, Digital 101', palette: violet },
+export type Service = {
+  id: string;
+  number: string;
+  title: string;
+  category: string;
+  shortDesc: string;
+  fullDesc: string;
+  tags: string[];
+  palette: Palette;
+  featuredSamples: ServiceSample[];
+};
+
+export const services: Service[] = [
+  {
+    id: 'web-dev',
+    number: '01',
+    title: 'Full-Stack Web Development',
+    category: 'Engineering & Software',
+    shortDesc:
+      'Building robust, database-driven web applications and scalable platforms with clean architecture and reactive user interfaces.',
+    fullDesc:
+      'I engineer responsive frontend interfaces and secure backend architectures using modern frameworks, REST APIs, and relational/NoSQL databases. From session-based authentication to third-party API integration with caching, each project is built for maintainability, speed, and clean code.',
+    tags: ['Node.js', 'Express', 'Oracle DB', 'PL/SQL', 'PHP', 'MySQL', 'PDO'],
+    palette: crimson,
+    featuredSamples: [
+      {
+        title: 'EV Charging System',
+        type: 'project',
+        projectId: 'ev-charging-system',
+        caption: 'Full-stack platform with Node.js, Express, Oracle Database, and PL/SQL billing procedures.',
+      },
+      {
+        title: 'Student Attendance Management System',
+        type: 'project',
+        projectId: 'student-attendance',
+        caption: 'Secure web app with PHP, MySQL, PDO prepared statements, faculty authentication, and multi-parameter filtering.',
+      },
+    ],
+  },
+  {
+    id: 'resume-design',
+    number: '02',
+    title: 'ATS-Friendly Resume & CV Design',
+    category: 'Career & Documents',
+    shortDesc:
+      'Structuring professional resumes and CVs engineered for clear hierarchy, readable typography, and ATS-conscious formatting.',
+    fullDesc:
+      'I create structured, visually polished resumes tailored for applicant tracking systems and hiring managers. Designs prioritize clean typography, standardized section headers, semantic grouping, and scannable layouts without graphics or multi-column traps that disrupt parsing.',
+    tags: ['ATS-Conscious', 'Clean Hierarchy', 'Single/Two-Column Formats', 'Executive Layout'],
+    palette: ocean,
+    featuredSamples: [
+      {
+        title: 'Anonymized Resume Sample 01',
+        type: 'pdf',
+        path: '/documents/resume-samples/resume_sample_01.pdf',
+        downloadName: 'ATS_Resume_Sample_01.pdf',
+        caption: 'Clean, chronological layout with standardized headers and high-contrast typography.',
+      },
+      {
+        title: 'Anonymized Resume Sample 02',
+        type: 'pdf',
+        path: '/documents/resume-samples/resume_sample_02.pdf',
+        downloadName: 'ATS_Resume_Sample_02.pdf',
+        caption: 'Skills-focused technical resume format designed for fast human scanning and ATS compliance.',
+      },
+      {
+        title: 'Anonymized Resume Sample 03',
+        type: 'pdf',
+        path: '/documents/resume-samples/resume_sample_03.pdf',
+        downloadName: 'ATS_Resume_Sample_03.pdf',
+        caption: 'Streamlined single-page professional profile maximizing space efficiency and readability.',
+      },
+    ],
+  },
+  {
+    id: 'graphic-design',
+    number: '03',
+    title: 'Graphic Design',
+    category: 'Visual & Identity',
+    shortDesc:
+      'Designing impactful promotional materials, event collateral, identity assets, and business stationery.',
+    fullDesc:
+      'I design visual communication collateral with an eye for proportions, typography, and brand identity. Showcasing real design deliverables created for Aventra Ushers—including official print business cards and promotional event posters.',
+    tags: ['Canva', 'Print Design', 'Brand Collateral', 'Event Posters', 'Business Cards'],
+    palette: amber,
+    featuredSamples: [
+      {
+        title: 'Aventra Ushers — Business Card',
+        type: 'pdf',
+        path: '/documents/graphic-design/Aventra Ushers - Business Card.pdf',
+        downloadName: 'Aventra_Ushers_Business_Card.pdf',
+        caption: 'Official corporate stationery design created for Aventra Ushers team members.',
+      },
+      {
+        title: 'Aventra Ushers — Event Poster',
+        type: 'image',
+        path: '/documents/graphic-design/Aventra Ushers_Poster.png',
+        downloadName: 'Aventra_Ushers_Poster.png',
+        caption: 'Promotional visual poster designed for brand awareness and event presence.',
+      },
+      {
+        title: 'Promotional Manpower Packages (Past Concept)',
+        type: 'pdf',
+        path: '/documents/graphic-design/Promotional Manpower Packages.pdf',
+        downloadName: 'Promotional_Manpower_Packages.pdf',
+        caption: 'Past concept layout sample demonstrating package structuring and tiered pricing presentation.',
+        isConcept: true,
+      },
+    ],
+  },
+  {
+    id: 'documentation',
+    number: '04',
+    title: 'Technical Documentation & Reporting',
+    category: 'Records & Reports',
+    shortDesc:
+      'Authoring comprehensive technical reports, official event logs, information tracking systems, and institutional records.',
+    fullDesc:
+      'Drawing from my documentation leadership with RSET IEDC & IIC SEED and national technical fests, I author structured technical documentation and institutional reports. Showcased here are genuine, approved reports capturing engineering algorithms and state-level promotional campaigns.',
+    tags: ['Technical Reports', 'Institutional Campaign Reports', 'Event Tracking', 'IEDC / IIC SEED'],
+    palette: violet,
+    featuredSamples: [
+      {
+        title: 'AAD LCS Report (Technical Report)',
+        type: 'pdf',
+        path: '/documents/documentation/aad-lcs-report.pdf',
+        downloadName: 'AAD_LCS_Report.pdf',
+        caption: 'Detailed technical report detailing Longest Common Subsequence algorithmic implementation and analysis.',
+      },
+      {
+        title: 'IEDC Summit Promotional Campaign Report',
+        type: 'pdf',
+        path: '/documents/documentation/IEDC Summit Promotional Campaign Report.pdf',
+        downloadName: 'IEDC_Summit_Promotional_Campaign_Report.pdf',
+        caption: 'Official institutional campaign report documenting promotional outreach and metrics for IEDC Summit.',
+      },
+    ],
+  },
+  {
+    id: 'data-excel',
+    number: '05',
+    title: 'Data Entry & Advanced Excel',
+    category: 'Data Management & Spreadsheets',
+    shortDesc:
+      'Structured record management, synthetic data cleaning, validation formulas, and organized reporting dashboards.',
+    fullDesc:
+      'Backed by G-Tec Advanced Excel and Diploma in Data Entry credentials, I deliver structured data entry, record cleaning, standardisation, and spreadsheet organization. The workbook featured below demonstrates systematic data cleansing, formatting rules, duplicate identification, and audit logging on synthetic data.',
+    tags: ['Advanced Excel', 'Data Cleaning', 'Format Validation', 'Duplicate Detection', 'Audit Logs'],
+    palette: jade,
+    featuredSamples: [
+      {
+        title: 'Data Cleaning & Standardization Workbook',
+        type: 'excel',
+        path: '/documents/data-entry-excel/data_cleaning_standardization_portfolio.xlsx',
+        downloadName: 'data_cleaning_standardization_portfolio.xlsx',
+        caption: 'Demonstration workbook featuring raw synthetic data, cleaned records, validation rules, duplicate detection, and a change log.',
+      },
+    ],
+  },
 ];
 
 export type IntroSlide = { kicker: string; title: string; lines: string[]; chips?: string[] };
@@ -566,27 +822,31 @@ export const introSlides: IntroSlide[] = [
   },
   {
     kicker: 'Originals',
-    title: 'Four Standout Productions',
+    title: 'Four Standout Productions · 2026',
     lines: [
-      'Task Manager — Weather API, rate-limiting & caching',
       'EV Charging System — Oracle Database & PL/SQL billing',
       'Student Attendance — Secure PHP & PDO prepared statements',
-      'MessMate — React SPA with Express API',
+      'Task Manager — Weather API, rate-limiting & caching',
+      'Digital Contact Book — Django REST & React SPA',
     ],
   },
   {
-    kicker: 'Leadership',
+    kicker: 'Leadership & Documentation',
     title: 'Beyond the Editor',
     lines: [
-      'Head Boy at Mar Thoma Residential School',
       'Documentation Core Committee · Techkshetra 2026',
+      'RSET IEDC & IIC SEED · Documentation Team',
       'Kerala Startup Mission · Huddle Global 2025 Anchor',
+      'Head Boy at Mar Thoma Residential School',
     ],
   },
   {
-    kicker: 'Certified',
-    title: 'Professional Certifications',
-    lines: ['Python & Django · Advanced Excel', 'Diploma in Data Entry · Digital 101'],
+    kicker: 'Services',
+    title: 'Five Curated Capabilities',
+    lines: [
+      'Full-Stack Web Development · ATS-Friendly Resumes',
+      'Graphic Design · Technical Documentation · Data Entry & Excel',
+    ],
   },
   {
     kicker: 'Mission',
@@ -595,52 +855,56 @@ export const introSlides: IntroSlide[] = [
   },
 ];
 
-export type ProfileId = 'rohan' | 'recruiter' | 'developer' | 'creative';
-export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
-
-export const viewerProfiles: {
-  id: ProfileId;
-  name: string;
-  blurb: string;
-  color: string;
-  order: SectionId[];
-}[] = [
-  {
-    id: 'rohan',
-    name: 'Rohan',
-    blurb: 'The full series, in order',
-    color: '#e5132b',
-    order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'],
-  },
-  {
-    id: 'recruiter',
-    name: 'Recruiter',
-    blurb: 'Resume, experience & skills first',
-    color: '#4cc9ff',
-    order: ['story', 'moments', 'skills', 'originals', 'about', 'journey', 'picks'],
-  },
-  {
-    id: 'developer',
-    name: 'Developer',
-    blurb: 'Projects, stack & code first',
-    color: '#46e3a8',
-    order: ['originals', 'skills', 'journey', 'moments', 'about', 'picks', 'story'],
-  },
-  {
-    id: 'creative',
-    name: 'Creative',
-    blurb: 'The story arc & leadership first',
-    color: '#ffb547',
-    order: ['journey', 'picks', 'originals', 'moments', 'about', 'skills', 'story'],
-  },
-];
+export type SectionId = 'about' | 'journey' | 'originals' | 'services' | 'skills' | 'story';
 
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
   about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & background', palette: violet },
   journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: amber },
   originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals • 2026`, palette: crimson },
-  picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 highlights', palette: jade },
+  services: { nav: 'Services', card: 'My Services', meta: `${services.length} Curated Capabilities`, palette: crimson },
   skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} Categories`, palette: ocean },
-  moments: { nav: 'Moments', card: 'Achievements', meta: `${achievements.length} Moments • ${certifications.length} Certifications`, palette: crimson },
   story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume • View & download', palette: violet },
 };
+
+export const defaultSectionOrder: SectionId[] = ['about', 'journey', 'originals', 'services', 'skills', 'story'];
+
+export type ProfileId = 'rohan' | 'recruiter' | 'developer' | 'creative';
+
+export type ViewerProfile = {
+  id: ProfileId;
+  name: string;
+  blurb: string;
+  color: string;
+  order: SectionId[];
+};
+
+export const viewerProfiles: ViewerProfile[] = [
+  {
+    id: 'rohan',
+    name: 'Rohan Sandesh',
+    blurb: 'The full portfolio experience',
+    color: '#e5132b',
+    order: ['about', 'journey', 'originals', 'services', 'skills', 'story'],
+  },
+  {
+    id: 'recruiter',
+    name: 'Recruiter',
+    blurb: "I'm hiring — show me the essentials",
+    color: '#4cc9ff',
+    order: ['about', 'story', 'originals', 'skills', 'journey', 'services'],
+  },
+  {
+    id: 'developer',
+    name: 'Developer',
+    blurb: "I'm a fellow dev — show me the tech",
+    color: '#46e3a8',
+    order: ['originals', 'skills', 'about', 'journey', 'services', 'story'],
+  },
+  {
+    id: 'creative',
+    name: 'Creative',
+    blurb: 'Show me design & creative work',
+    color: '#ffb547',
+    order: ['services', 'about', 'originals', 'skills', 'journey', 'story'],
+  },
+];
