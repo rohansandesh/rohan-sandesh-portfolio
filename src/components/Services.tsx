@@ -19,7 +19,7 @@ export default function Services({ onOpenProject }: { onOpenProject: (p: Project
         }
       />
 
-      <div className="gutter grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+      <div className="gutter grid grid-cols-1 min-w-0 w-full gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
         {services.map((service, i) => (
           <motion.div
             key={service.id}
@@ -27,51 +27,51 @@ export default function Services({ onOpenProject }: { onOpenProject: (p: Project
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-6% 0px' }}
             transition={{ duration: 0.8, delay: i * 0.08, ease: EASE }}
-            className={i === 0 ? 'md:col-span-2 lg:col-span-1' : ''}
+            className={`min-w-0 w-full ${i === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
           >
-            <Tilt max={6} className="group h-full rounded-2xl">
-              <article className="relative flex h-full min-h-[380px] flex-col overflow-hidden rounded-2xl bg-ink-2 p-6 ring-1 ring-white/10 transition-all duration-500 hover:ring-white/25 hover:shadow-[0_24px_60px_-15px_rgba(0,0,0,0.8)] sm:p-7">
+            <Tilt max={6} className="group h-full w-full min-w-0 rounded-2xl">
+              <article className="relative flex h-full min-h-[360px] sm:min-h-[380px] w-full min-w-0 flex-col overflow-hidden rounded-2xl bg-ink-2 p-5 sm:p-7 ring-1 ring-white/10 transition-all duration-500 hover:ring-white/25 hover:shadow-[0_24px_60px_-15px_rgba(0,0,0,0.8)]">
                 {/* Ambient glow from palette */}
                 <div
                   aria-hidden
-                  className="absolute -right-16 -top-16 h-44 w-44 rounded-full opacity-20 blur-3xl transition duration-700 group-hover:opacity-40"
+                  className="absolute -right-16 -top-16 h-44 w-44 rounded-full opacity-20 blur-3xl transition duration-700 group-hover:opacity-40 pointer-events-none"
                   style={{ background: service.palette.accent }}
                 />
 
                 {/* Top Badge */}
-                <div className="flex items-center justify-between">
-                  <span className="font-sans text-[11px] font-bold tracking-[0.26em] text-crimson-2">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-sans text-[11px] font-bold tracking-[0.26em] text-crimson-2 shrink-0">
                     SERVICE {service.number}
                   </span>
-                  <span className="rounded border border-white/15 bg-black/40 px-2 py-0.5 text-[10px] font-semibold text-mist backdrop-blur">
+                  <span className="truncate rounded border border-white/15 bg-black/40 px-2 py-0.5 text-[10px] font-semibold text-mist backdrop-blur">
                     {service.category}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-5 font-display text-3xl leading-[0.95] tracking-wide text-bone sm:text-4xl">
+                <h3 className="mt-4 sm:mt-5 font-display text-2xl sm:text-3xl lg:text-4xl leading-[0.96] tracking-wide text-bone break-words">
                   {service.title}
                 </h3>
 
                 {/* Short description */}
-                <p className="mt-3 text-sm leading-relaxed text-bone/75">
+                <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm leading-relaxed text-bone/75">
                   {service.shortDesc}
                 </p>
 
                 {/* Sample items preview indicator */}
-                <div className="mt-5 rounded-lg border border-white/5 bg-black/30 p-3">
+                <div className="mt-4 sm:mt-5 w-full min-w-0 rounded-lg border border-white/5 bg-black/30 p-3">
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-smoke">Available Evidence</p>
-                  <p className="mt-1 text-xs text-mist truncate">
+                  <p className="mt-1 text-xs text-mist truncate block w-full">
                     {service.featuredSamples.map((s) => s.title).join(' • ')}
                   </p>
                 </div>
 
                 {/* Tags */}
-                <div className="mt-auto pt-6 flex flex-wrap gap-1.5">
+                <div className="mt-auto pt-5 sm:pt-6 flex flex-wrap gap-1.5 w-full min-w-0">
                   {service.tags.slice(0, 4).map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-white/[0.05] px-2.5 py-1 text-[11px] font-medium text-mist"
+                      className="rounded-full bg-white/[0.05] px-2.5 py-1 text-[11px] font-medium text-mist max-w-full truncate"
                     >
                       {tag}
                     </span>
@@ -84,7 +84,7 @@ export default function Services({ onOpenProject }: { onOpenProject: (p: Project
                 </div>
 
                 {/* Action button */}
-                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+                <div className="mt-4 sm:mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
                   <button
                     type="button"
                     onClick={() => setActiveService(service)}

@@ -7,7 +7,7 @@ export default function About() {
     <>
       <SectionHeading kicker="The Pilot" title="About Me" />
 
-      <div className="gutter grid items-start gap-8 sm:gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+      <div className="gutter grid items-start gap-6 sm:gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
         {/* Left Column — Portrait (rohan-right.png looking to the right with genuine transparency) */}
         <motion.div
           className="mx-auto w-full max-w-sm sm:max-w-md lg:sticky lg:top-24 lg:max-w-none"
@@ -17,7 +17,7 @@ export default function About() {
           transition={{ duration: 1.2, ease: EASE }}
         >
           <Tilt max={5} className="rounded-2xl">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[4/4.2] sm:aspect-[4/5] overflow-hidden rounded-2xl">
               {/* Soft dark atmospheric glow without a rectangular card border */}
               <div
                 aria-hidden
@@ -29,7 +29,7 @@ export default function About() {
                 src={profile.aboutPortrait.src}
                 alt={profile.aboutPortrait.alt}
                 loading="lazy"
-                className="absolute bottom-0 left-1/2 h-[96%] w-auto max-w-full sm:max-w-none -translate-x-1/2 object-contain object-bottom transition-transform duration-700 ease-[var(--ease-cine)] hover:scale-105"
+                className="absolute bottom-0 left-1/2 h-[98%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom transition-transform duration-700 ease-[var(--ease-cine)] hover:scale-105"
               />
 
               {/* Bottom vignette fading cleanly into page background */}
