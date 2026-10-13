@@ -107,19 +107,19 @@ export function RevealText({ text, className = '', delay = 0, as = 'span' }: { t
 /** Small kicker + big title used at the top of every section. */
 export function SectionHeading({ kicker, title, aside }: { kicker: string; title: string; aside?: ReactNode }) {
   return (
-    <div className="gutter mb-6 flex flex-wrap items-end justify-between gap-4 md:mb-9">
+    <div className="gutter mb-5 flex flex-wrap items-end justify-between gap-3 sm:gap-4 md:mb-9">
       <div>
         <motion.div
           initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="mb-2 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-crimson-2"
+          className="mb-1.5 sm:mb-2 flex items-center gap-2.5 sm:gap-3 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.26em] sm:tracking-[0.32em] text-crimson-2"
         >
-          <span className="h-px w-8 bg-crimson-2" />
+          <span className="h-px w-6 sm:w-8 bg-crimson-2" />
           {kicker}
         </motion.div>
-        <RevealText as="h2" text={title} className="font-display text-[clamp(2.4rem,6vw,5rem)] leading-[0.9] tracking-wide text-bone" />
+        <RevealText as="h2" text={title} className="font-display text-[clamp(2.1rem,5.5vw,5rem)] leading-[0.9] tracking-wide text-bone" />
       </div>
       {aside}
     </div>

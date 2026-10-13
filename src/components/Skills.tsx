@@ -18,10 +18,10 @@ export default function Skills() {
         aside={<p className="max-w-xs text-sm text-mist">Hover or tap a skill to see where it appears across projects, internships, and certifications.</p>}
       />
 
-      <div className="gutter grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-14">
+      <div className="gutter grid gap-6 sm:gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-14">
         {/* genre list */}
         <div
-          className="rail -mx-[var(--gutter)] flex gap-2 overflow-x-auto px-[var(--gutter)] lg:mx-0 lg:flex-col lg:gap-1 lg:overflow-visible lg:px-0"
+          className="rail -mx-[var(--gutter)] max-w-[calc(100vw-0px)] flex gap-2 overflow-x-auto px-[var(--gutter)] pb-1 lg:mx-0 lg:max-w-none lg:flex-col lg:gap-1 lg:overflow-visible lg:px-0 lg:pb-0"
           role="tablist"
           aria-label="Skill categories"
         >
@@ -32,7 +32,7 @@ export default function Skills() {
               role="tab"
               aria-selected={i === cat}
               onClick={() => setCat(i)}
-              className={`group relative shrink-0 rounded-lg px-4 py-3 text-left transition lg:px-5 ${
+              className={`group relative shrink-0 rounded-lg px-3.5 py-2.5 text-left transition sm:px-4 sm:py-3 lg:px-5 ${
                 i === cat ? 'text-bone' : 'text-smoke hover:text-bone'
               }`}
             >
@@ -50,7 +50,7 @@ export default function Skills() {
                   style={{ background: hue }}
                 />
               )}
-              <span className="relative block font-display text-2xl tracking-wide lg:text-3xl">{c.title}</span>
+              <span className="relative block font-display text-xl sm:text-2xl tracking-wide lg:text-3xl">{c.title}</span>
               <span className="relative hidden text-xs text-smoke lg:block">
                 {c.skills.length} skills · {c.subtitle}
               </span>

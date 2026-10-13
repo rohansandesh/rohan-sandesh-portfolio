@@ -7,10 +7,10 @@ export default function About() {
     <>
       <SectionHeading kicker="The Pilot" title="About Me" />
 
-      <div className="gutter grid items-start gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+      <div className="gutter grid items-start gap-8 sm:gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
         {/* Left Column — Portrait (rohan-right.png looking to the right with genuine transparency) */}
         <motion.div
-          className="mx-auto w-full max-w-md lg:sticky lg:top-24 lg:max-w-none"
+          className="mx-auto w-full max-w-sm sm:max-w-md lg:sticky lg:top-24 lg:max-w-none"
           initial={{ opacity: 0, scale: 0.94, filter: 'blur(12px)' }}
           whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, margin: '-10% 0px' }}
@@ -29,7 +29,7 @@ export default function About() {
                 src={profile.aboutPortrait.src}
                 alt={profile.aboutPortrait.alt}
                 loading="lazy"
-                className="absolute bottom-0 left-1/2 h-[96%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom transition-transform duration-700 ease-[var(--ease-cine)] hover:scale-105"
+                className="absolute bottom-0 left-1/2 h-[96%] w-auto max-w-full sm:max-w-none -translate-x-1/2 object-contain object-bottom transition-transform duration-700 ease-[var(--ease-cine)] hover:scale-105"
               />
 
               {/* Bottom vignette fading cleanly into page background */}

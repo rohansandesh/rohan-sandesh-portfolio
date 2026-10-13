@@ -6,7 +6,7 @@ import { ProjectArt } from './Poster';
 export default function ProjectCard({ project, index, onOpen }: { project: Project; index: number; onOpen: () => void }) {
   return (
     <motion.article
-      className="w-[84vw] shrink-0 snap-start sm:w-[62vw] lg:w-[46vw] xl:w-[42vw]"
+      className="w-[82vw] shrink-0 snap-start sm:w-[58vw] md:w-[48vw] lg:w-[44vw] xl:w-[40vw]"
       initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, margin: '0px -10% 0px 0px' }}
@@ -33,23 +33,23 @@ export default function ProjectCard({ project, index, onOpen }: { project: Proje
             </div>
           </motion.div>
 
-          <div className="absolute left-5 top-5 flex items-center gap-2 sm:left-7 sm:top-7">
-            <span className="font-display text-xl leading-none text-crimson-2">R</span>
-            <span className="text-[10px] font-bold tracking-[0.34em] text-bone/80">ORIGINAL</span>
+          <div className="absolute left-4 top-4 flex items-center gap-2 sm:left-7 sm:top-7">
+            <span className="font-display text-lg sm:text-xl leading-none text-crimson-2">R</span>
+            <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.3em] sm:tracking-[0.34em] text-bone/80">ORIGINAL</span>
           </div>
-          <span className="absolute right-5 top-5 rounded border border-white/30 px-1.5 py-px text-[10px] font-bold text-bone sm:right-7 sm:top-7">
+          <span className="absolute right-4 top-4 rounded border border-white/30 px-1.5 py-px text-[9px] sm:text-[10px] font-bold text-bone sm:right-7 sm:top-7">
             {project.year}
           </span>
 
-          <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 [transform:translateZ(40px)]">
-            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-mist">{project.genre}</p>
-            <motion.h3 layoutId={`title-${project.id}`} className="font-display text-[clamp(2.4rem,5vw,4.6rem)] leading-[0.88] tracking-wide text-bone">
+          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-7 [transform:translateZ(40px)]">
+            <p className="mb-1.5 sm:mb-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.24em] text-mist">{project.genre}</p>
+            <motion.h3 layoutId={`title-${project.id}`} className="font-display text-[clamp(1.9rem,4.5vw,4.6rem)] leading-[0.9] tracking-wide text-bone">
               {project.title}
             </motion.h3>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-bone/75 sm:text-[15px]">{project.logline}</p>
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              {project.stack.map((t) => (
-                <span key={t} className="rounded-full bg-black/35 px-2.5 py-1 text-[11px] font-medium text-bone/90 backdrop-blur">
+            <p className="mt-2 sm:mt-3 max-w-md text-xs sm:text-[15px] leading-relaxed text-bone/75 line-clamp-3 sm:line-clamp-none">{project.logline}</p>
+            <div className="mt-3 sm:mt-4 flex flex-wrap gap-1 sm:gap-1.5">
+              {project.stack.slice(0, 4).map((t) => (
+                <span key={t} className="rounded-full bg-black/45 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-medium text-bone/90 backdrop-blur">
                   {t}
                 </span>
               ))}

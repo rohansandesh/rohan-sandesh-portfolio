@@ -98,7 +98,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
   };
 
   return (
-    <section id="contact" className="relative min-h-[100svh] overflow-hidden px-4 py-20 sm:py-28">
+    <section id="contact" className="relative min-h-[100svh] overflow-hidden py-16 sm:py-24">
       {/* Background atmosphere */}
       <div
         aria-hidden
@@ -110,7 +110,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
         {/* Section Heading Header */}
         <div className="text-center">
           <motion.p
-            className="mb-3 text-[11px] font-bold uppercase tracking-[0.4em] text-crimson-2"
+            className="mb-2 sm:mb-3 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.3em] sm:tracking-[0.4em] text-crimson-2"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -119,7 +119,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
           </motion.p>
 
           <motion.h2
-            className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-wide text-bone"
+            className="font-display text-[clamp(2.2rem,6vw,5.5rem)] leading-[0.92] tracking-wide text-bone"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -129,7 +129,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
           </motion.h2>
 
           <motion.p
-            className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-bone/80 sm:text-base"
+            className="mx-auto mt-3 sm:mt-4 max-w-2xl text-xs sm:text-base leading-relaxed text-bone/80"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -141,44 +141,44 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
         </div>
 
         {/* Two-Column Layout */}
-        <div className="mt-16 grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="mt-12 sm:mt-16 grid gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16">
           {/* LEFT COLUMN — Contact Information */}
           <motion.div
-            className="flex flex-col justify-between rounded-2xl bg-ink-2 p-7 sm:p-10 ring-1 ring-white/10"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="flex flex-col justify-between rounded-2xl bg-ink-2 p-5 sm:p-10 ring-1 ring-white/10"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: EASE }}
           >
             <div>
-              <span className="inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-400">
+              <span className="inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-emerald-400">
                 ● OPEN TO INTERNSHIPS &amp; COLLABORATIONS
               </span>
 
-              <h3 className="mt-6 font-display text-3xl leading-tight tracking-wide text-bone sm:text-4xl">
+              <h3 className="mt-5 sm:mt-6 font-display text-2xl sm:text-4xl leading-tight tracking-wide text-bone">
                 LET&apos;S BUILD SOMETHING MEANINGFUL.
               </h3>
 
-              <p className="mt-4 text-sm leading-relaxed text-mist sm:text-[15px]">
+              <p className="mt-3 sm:mt-4 text-xs sm:text-[15px] leading-relaxed text-mist">
                 From developing web applications to designing resumes and creating digital experiences, I&apos;m
                 always interested in meaningful collaborations and opportunities to learn, build, and grow.
               </p>
 
               {/* Contact Options List */}
-              <div className="mt-8 space-y-4">
+              <div className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
                 {/* 01 — Email */}
                 <a
                   href={`mailto:${profile.email}`}
                   data-cursor="link"
-                  className="group flex items-center justify-between rounded-xl border border-white/5 bg-black/40 p-4 transition hover:border-crimson/50 hover:bg-black/60"
+                  className="group flex items-center justify-between rounded-xl border border-white/5 bg-black/40 p-3.5 sm:p-4 transition hover:border-crimson/50 hover:bg-black/60"
                 >
-                  <div className="min-w-0">
+                  <div className="min-w-0 pr-2">
                     <p className="text-[10px] font-bold tracking-[0.2em] text-crimson-2">01 — EMAIL</p>
-                    <p className="truncate text-base font-semibold text-bone transition group-hover:text-white">
+                    <p className="truncate text-sm sm:text-base font-semibold text-bone transition group-hover:text-white">
                       {profile.email}
                     </p>
                   </div>
-                  <span className="text-sm text-smoke transition group-hover:translate-x-1 group-hover:text-bone">
+                  <span className="text-sm text-smoke transition group-hover:translate-x-1 group-hover:text-bone shrink-0">
                     ↗
                   </span>
                 </a>
@@ -189,14 +189,14 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
                   target="_blank"
                   rel="noreferrer"
                   data-cursor="link"
-                  className="group flex items-center justify-between rounded-xl border border-white/5 bg-black/40 p-4 transition hover:border-sky-500/50 hover:bg-black/60"
+                  className="group flex items-center justify-between rounded-xl border border-white/5 bg-black/40 p-3.5 sm:p-4 transition hover:border-sky-500/50 hover:bg-black/60"
                 >
-                  <div className="min-w-0">
+                  <div className="min-w-0 pr-2">
                     <p className="text-[10px] font-bold tracking-[0.2em] text-sky-400">02 — LINKEDIN</p>
                     <p className="text-sm font-semibold text-bone">Connect professionally</p>
                     <p className="truncate text-xs text-mist">{profile.links.linkedin}</p>
                   </div>
-                  <span className="text-sm text-smoke transition group-hover:translate-x-1 group-hover:text-bone">
+                  <span className="text-sm text-smoke transition group-hover:translate-x-1 group-hover:text-bone shrink-0">
                     ↗
                   </span>
                 </a>
@@ -207,37 +207,37 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
                   target="_blank"
                   rel="noreferrer"
                   data-cursor="link"
-                  className="group flex items-center justify-between rounded-xl border border-white/5 bg-black/40 p-4 transition hover:border-emerald-500/50 hover:bg-black/60"
+                  className="group flex items-center justify-between rounded-xl border border-white/5 bg-black/40 p-3.5 sm:p-4 transition hover:border-emerald-500/50 hover:bg-black/60"
                 >
-                  <div className="min-w-0">
+                  <div className="min-w-0 pr-2">
                     <p className="text-[10px] font-bold tracking-[0.2em] text-emerald-400">03 — GITHUB</p>
                     <p className="text-sm font-semibold text-bone">Explore my work</p>
                     <p className="truncate text-xs text-mist">{profile.links.github}</p>
                   </div>
-                  <span className="text-sm text-smoke transition group-hover:translate-x-1 group-hover:text-bone">
+                  <span className="text-sm text-smoke transition group-hover:translate-x-1 group-hover:text-bone shrink-0">
                     ↗
                   </span>
                 </a>
               </div>
             </div>
 
-            <div className="mt-8 border-t border-white/10 pt-4 text-xs text-smoke">
+            <div className="mt-6 sm:mt-8 border-t border-white/10 pt-4 text-xs text-smoke">
               Based in {profile.location} · Available for remote &amp; on-site opportunities
             </div>
           </motion.div>
 
           {/* RIGHT COLUMN — Contact Form */}
           <motion.div
-            className="rounded-2xl bg-ink-2 p-7 sm:p-10 ring-1 ring-white/10"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="rounded-2xl bg-ink-2 p-5 sm:p-10 ring-1 ring-white/10"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: EASE }}
           >
-            <h3 className="font-display text-3xl tracking-wide text-bone sm:text-4xl">SEND A MESSAGE</h3>
-            <p className="mt-1 text-sm text-mist">Have something in mind? Let&apos;s talk.</p>
+            <h3 className="font-display text-2xl sm:text-4xl tracking-wide text-bone">SEND A MESSAGE</h3>
+            <p className="mt-1 text-xs sm:text-sm text-mist">Have something in mind? Let&apos;s talk.</p>
 
-            <form onSubmit={handleSubmit} className="mt-8 space-y-4" noValidate>
+            <form onSubmit={handleSubmit} className="mt-6 sm:mt-8 space-y-4" noValidate>
               {/* Spam Honeypot Field */}
               <input
                 type="text"
@@ -263,7 +263,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   disabled={status === 'loading' || hasSubmitted}
-                  className="mt-1.5 w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
+                  className="mt-1.5 w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-base sm:text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
                 />
               </div>
 
@@ -280,7 +280,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   disabled={status === 'loading' || hasSubmitted}
-                  className="mt-1.5 w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
+                  className="mt-1.5 w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-base sm:text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
                 />
               </div>
 
@@ -297,7 +297,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   disabled={status === 'loading' || hasSubmitted}
-                  className="mt-1.5 w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
+                  className="mt-1.5 w-full rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-base sm:text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
                 />
               </div>
 
@@ -314,7 +314,7 @@ export default function FinalCTA({ onReplay }: { onReplay: () => void }) {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   disabled={status === 'loading' || hasSubmitted}
-                  className="mt-1.5 w-full resize-none rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
+                  className="mt-1.5 w-full resize-none rounded-lg border border-white/15 bg-black/40 px-4 py-3 text-base sm:text-sm text-bone placeholder-smoke focus:border-crimson focus:outline-none focus:ring-1 focus:ring-crimson transition disabled:opacity-50"
                 />
               </div>
 

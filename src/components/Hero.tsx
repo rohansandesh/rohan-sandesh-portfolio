@@ -65,11 +65,11 @@ export default function Hero({ onPlay }: { onPlay: () => void }) {
 
       {/* portrait (rohan-left.png looking leftwards towards text, floating with genuine transparency) */}
       <motion.div
-        className="absolute inset-x-0 top-12 z-[2] flex h-[64svh] items-end justify-center sm:h-[70svh] lg:bottom-0 lg:left-auto lg:right-[3vw] lg:top-20 lg:h-auto lg:w-[54vw] xl:right-[6vw] xl:w-[48vw]"
+        className="absolute inset-x-0 top-12 z-[2] flex h-[56svh] items-end justify-center sm:h-[68svh] lg:bottom-0 lg:left-auto lg:right-[3vw] lg:top-20 lg:h-auto lg:w-[54vw] xl:right-[6vw] xl:w-[48vw]"
         style={{ y: imgY, scale: imgScale, opacity: fade }}
       >
         <motion.div
-          className="relative h-full w-full lg:h-[86vh]"
+          className="relative h-full w-full max-w-[92vw] lg:max-w-none lg:h-[86vh]"
           style={{ rotateY: imgRotY, rotateX: imgRotX, x: imgShiftX, transformPerspective: 1200 }}
           initial={{ clipPath: 'inset(100% -30% -10% -30%)', opacity: 0 }}
           animate={{ clipPath: 'inset(-30% -30% -10% -30%)', opacity: 1 }}
@@ -78,63 +78,63 @@ export default function Hero({ onPlay }: { onPlay: () => void }) {
           <img
             src={profile.homePortrait.src}
             alt={profile.homePortrait.alt}
-            className="absolute bottom-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 object-contain"
+            className="absolute bottom-0 left-1/2 h-full w-auto max-w-full -translate-x-1/2 object-contain"
           />
         </motion.div>
       </motion.div>
 
       {/* readability gradients */}
-      <div aria-hidden className="absolute inset-x-0 top-[40svh] z-[3] h-[36svh] bg-gradient-to-b from-transparent via-ink/70 to-ink lg:hidden" />
+      <div aria-hidden className="absolute inset-x-0 top-[36svh] z-[3] h-[40svh] bg-gradient-to-b from-transparent via-ink/80 to-ink lg:hidden" />
       <div aria-hidden className="absolute inset-0 z-[3] hidden bg-[linear-gradient(90deg,var(--color-ink)_0%,rgba(7,7,10,0.7)_32%,transparent_58%)] lg:block" />
       <div aria-hidden className="absolute inset-x-0 bottom-0 z-[3] h-48 bg-gradient-to-t from-ink to-transparent" />
 
       {/* copy */}
       <motion.div
-        className="gutter relative z-[4] flex min-h-[100svh] flex-col justify-end pb-16 pt-[54svh] sm:pb-20 lg:max-w-[52vw] lg:justify-center lg:pb-0 lg:pt-24"
+        className="gutter relative z-[4] flex min-h-[100svh] flex-col justify-end pb-14 pt-[46svh] sm:pb-20 sm:pt-[54svh] lg:max-w-[52vw] lg:justify-center lg:pb-0 lg:pt-24"
         style={{ y: textY, opacity: fade }}
         variants={container}
         initial="hidden"
         animate="show"
       >
-        <motion.div variants={item} className="mb-3 text-lg">
+        <motion.div variants={item} className="mb-2 sm:mb-3 text-base sm:text-lg">
           <SeriesMark />
         </motion.div>
-        <motion.h1 variants={item} className="font-display leading-[0.82] tracking-[0.02em] text-bone" style={{ fontSize: 'clamp(4rem, 10vw, 9.5rem)' }}>
+        <motion.h1 variants={item} className="font-display leading-[0.85] tracking-[0.02em] text-bone break-normal" style={{ fontSize: 'clamp(2.75rem, 8.8vw, 9.5rem)' }}>
           <span className="shimmer-text">ROHAN SANDESH</span>
         </motion.h1>
-        <motion.p variants={item} className="mt-1 font-sans text-sm font-bold tracking-[0.62em] text-crimson-2 sm:text-base">
+        <motion.p variants={item} className="mt-1 font-sans text-xs font-bold tracking-[0.28em] text-crimson-2 sm:text-sm sm:tracking-[0.62em]">
           {profile.seriesTag}
         </motion.p>
 
-        <motion.div variants={item} className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] font-medium text-mist">
+        <motion.div variants={item} className="mt-4 sm:mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-xs sm:text-[13px] font-medium text-mist">
           <span className="rounded border border-white/25 px-1.5 py-px text-[10px] font-bold tracking-wider text-bone">FULL-STACK</span>
           {meta.map((m, i) => (
-            <span key={m} className="flex items-center gap-3">
+            <span key={m} className="flex items-center gap-2 sm:gap-3">
               {i > 0 && <span className="h-1 w-1 rounded-full bg-smoke" />}
               {m}
             </span>
           ))}
         </motion.div>
 
-        <motion.p variants={item} className="mt-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-bone/90 sm:text-xs sm:tracking-[0.34em]">
+        <motion.p variants={item} className="mt-3 sm:mt-4 text-[10px] font-semibold uppercase tracking-[0.16em] text-bone/90 sm:text-xs sm:tracking-[0.34em]">
           {profile.tagline.join(' • ')}
         </motion.p>
 
-        <motion.p variants={item} className="mt-4 max-w-xl text-[15px] leading-relaxed text-bone/80 sm:text-base">
+        <motion.p variants={item} className="mt-3 sm:mt-4 max-w-xl text-sm leading-relaxed text-bone/80 sm:text-base">
           {profile.homeIntro}
         </motion.p>
 
         {/* Action Buttons: 1. Play Intro, 2. My Work, 3. My Services, 4. Info icon */}
-        <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
+        <motion.div variants={item} className="mt-6 sm:mt-8 flex flex-wrap items-center gap-2.5 sm:gap-3">
           {/* 1. Play Intro */}
           <Magnetic>
             <button
               type="button"
               data-cursor="play"
               onClick={onPlay}
-              className="flex min-h-12 items-center gap-2.5 rounded-md bg-bone px-6 py-3 text-[15px] font-bold text-ink transition hover:bg-white sm:px-7"
+              className="flex min-h-11 sm:min-h-12 items-center gap-2 rounded-md bg-bone px-5 py-2.5 sm:px-7 sm:py-3 text-sm sm:text-[15px] font-bold text-ink transition hover:bg-white active:scale-95"
             >
-              <span className="text-base">▶</span> Play Intro
+              <span className="text-sm sm:text-base">▶</span> Play Intro
             </button>
           </Magnetic>
 
@@ -143,9 +143,9 @@ export default function Hero({ onPlay }: { onPlay: () => void }) {
             <button
               type="button"
               onClick={() => scrollTo('#originals')}
-              className="glass flex min-h-12 items-center gap-2.5 rounded-md px-6 py-3 text-[15px] font-semibold text-bone transition hover:bg-white/15 sm:px-7"
+              className="glass flex min-h-11 sm:min-h-12 items-center gap-2 rounded-md px-5 py-2.5 sm:px-7 sm:py-3 text-sm sm:text-[15px] font-semibold text-bone transition hover:bg-white/15 active:scale-95"
             >
-              <span className="text-lg leading-none">＋</span> My Work
+              <span className="text-base sm:text-lg leading-none">＋</span> My Work
             </button>
           </Magnetic>
 
@@ -154,9 +154,9 @@ export default function Hero({ onPlay }: { onPlay: () => void }) {
             <button
               type="button"
               onClick={() => scrollTo('#services')}
-              className="glass flex min-h-12 items-center gap-2.5 rounded-md px-6 py-3 text-[15px] font-semibold text-bone transition hover:bg-white/15 sm:px-7"
+              className="glass flex min-h-11 sm:min-h-12 items-center gap-2 rounded-md px-5 py-2.5 sm:px-7 sm:py-3 text-sm sm:text-[15px] font-semibold text-bone transition hover:bg-white/15 active:scale-95"
             >
-              <span className="text-base text-crimson-2 leading-none">✦</span> My Services
+              <span className="text-sm sm:text-base text-crimson-2 leading-none">✦</span> My Services
             </button>
           </Magnetic>
 
@@ -165,7 +165,7 @@ export default function Hero({ onPlay }: { onPlay: () => void }) {
             type="button"
             onClick={() => scrollTo('#about')}
             aria-label="More about Rohan Sandesh"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 text-lg text-bone transition hover:border-bone hover:bg-white/10"
+            className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/30 text-base sm:text-lg text-bone transition hover:border-bone hover:bg-white/10 active:scale-95"
           >
             ⓘ
           </button>

@@ -48,11 +48,11 @@ export default function Seasons() {
           transition={{ duration: 0.55, ease: EASE }}
         >
           <div className="gutter mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <h3 className="font-display text-4xl tracking-wide text-bone sm:text-5xl">
-              <span className="text-outline mr-3">S{String(season.number).padStart(2, '0')}</span>
+            <h3 className="font-display text-3xl tracking-wide text-bone sm:text-4xl md:text-5xl">
+              <span className="text-outline mr-2 sm:mr-3">S{String(season.number).padStart(2, '0')}</span>
               {season.title}
             </h3>
-            <span className="text-sm text-mist">
+            <span className="text-xs sm:text-sm text-mist">
               {season.period} · {season.episodes.length} {season.episodes.length === 1 ? 'Episode' : 'Episodes'}
             </span>
           </div>

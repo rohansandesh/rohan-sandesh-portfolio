@@ -110,7 +110,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
         <img
           src={profile.portrait.src}
           alt=""
-          className="h-[80vh] w-auto max-w-none object-contain object-bottom"
+          className="h-[80vh] w-auto max-w-full sm:max-w-none object-contain object-bottom"
         />
       </motion.div>
 
@@ -140,7 +140,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
         type="button"
         onClick={onClose}
         aria-label="Close intro"
-        className="absolute right-4 top-[max(2.5rem,env(safe-area-inset-top))] z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-bone backdrop-blur hover:bg-black"
+        className="absolute right-4 top-[max(2rem,env(safe-area-inset-top))] z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-bone backdrop-blur hover:bg-black active:scale-95"
       >
         ✕
       </button>
@@ -168,7 +168,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
       </div>
 
       {/* Slide content */}
-      <div className="gutter pointer-events-none relative z-20 flex min-h-full flex-col justify-end pb-20 sm:pb-28">
+      <div className="gutter pointer-events-none relative z-20 flex min-h-full flex-col justify-end pb-[max(4.5rem,calc(env(safe-area-inset-bottom)+3.5rem))] sm:pb-28">
         <AnimatePresence mode="wait">
           {phase === 'reel' && (
             <motion.div
@@ -180,7 +180,7 @@ export default function PlayIntro({ onClose }: { onClose: () => void }) {
               className="max-w-3xl"
             >
               <p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-crimson-2">{slide.kicker}</p>
-              <h3 className="font-display text-[clamp(2.5rem,7vw,5.5rem)] leading-[0.88] tracking-wide text-bone">
+              <h3 className="font-display text-[clamp(2.1rem,6.5vw,5.5rem)] leading-[0.88] tracking-wide text-bone">
                 {slide.title}
               </h3>
               <div className="mt-4 space-y-2 text-base text-bone/85 sm:text-lg">

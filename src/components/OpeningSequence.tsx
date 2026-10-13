@@ -92,34 +92,34 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
 
       {/* portrait */}
       <motion.div
-        className="absolute inset-x-0 bottom-0 z-0 mx-auto flex h-[68vh] max-w-[900px] items-end justify-center"
-        initial={{ opacity: 0, scale: 1.12, filter: 'blur(18px) brightness(0.3)' }}
+        className="absolute inset-x-0 bottom-0 z-0 mx-auto flex h-[62vh] max-w-[92vw] items-end justify-center sm:h-[68vh] sm:max-w-[900px]"
+        initial={{ opacity: 0, scale: 1.08, filter: 'blur(18px) brightness(0.3)' }}
         animate={beat >= 4 ? { opacity: 1, scale: 1, filter: 'blur(0px) brightness(1)' } : {}}
         transition={{ duration: 1.6, ease: EASE }}
       >
         <img
           src={profile.portrait.src}
           alt={profile.portrait.alt}
-          className="h-full w-auto max-w-none object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_55%,transparent_98%)]"
+          className="h-full w-auto max-w-full object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_55%,transparent_98%)]"
         />
       </motion.div>
       <div aria-hidden className="absolute inset-0 z-[1] bg-[radial-gradient(70%_60%_at_50%_40%,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
 
       {/* title */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center pointer-events-none">
         <motion.h1
           className="font-display leading-[0.82] text-bone drop-shadow-[0_8px_40px_rgba(0,0,0,0.8)]"
-          style={{ fontSize: 'clamp(4.6rem, 20vw, 15rem)' }}
-          initial={{ opacity: 0, scale: 1.3, filter: 'blur(20px)', letterSpacing: '0.5em' }}
-          animate={beat >= 2 ? { opacity: 1, scale: 1, filter: 'blur(0px)', letterSpacing: '0.04em', y: beat >= 4 ? '-30vh' : 0 } : {}}
+          style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
+          initial={{ opacity: 0, scale: 1.15, filter: 'blur(16px)', letterSpacing: '0.15em' }}
+          animate={beat >= 2 ? { opacity: 1, scale: 1, filter: 'blur(0px)', letterSpacing: '0.04em', y: beat >= 4 ? '-22vh' : 0 } : {}}
           transition={{ duration: 1.3, ease: EASE }}
         >
           {profile.firstName}
         </motion.h1>
         <motion.p
-          className="font-sans text-sm font-bold text-crimson-2 [text-shadow:0_2px_20px_rgba(0,0,0,0.9)] sm:text-lg"
-          initial={{ opacity: 0, letterSpacing: '1.4em' }}
-          animate={beat >= 3 ? { opacity: 1, letterSpacing: '0.7em', y: beat >= 4 ? '-30vh' : 0 } : {}}
+          className="font-sans text-xs font-bold text-crimson-2 [text-shadow:0_2px_20px_rgba(0,0,0,0.9)] sm:text-base md:text-lg"
+          initial={{ opacity: 0, letterSpacing: '0.5em' }}
+          animate={beat >= 3 ? { opacity: 1, letterSpacing: '0.35em', y: beat >= 4 ? '-22vh' : 0 } : {}}
           transition={{ duration: 1.1, ease: EASE }}
         >
           {profile.seriesTag}
@@ -127,9 +127,9 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       </div>
 
       {/* role + play */}
-      <div className="absolute inset-x-0 bottom-[9vh] z-20 flex flex-col items-center gap-6 px-4 text-center">
+      <div className="absolute inset-x-0 bottom-[max(5vh,env(safe-area-inset-bottom))] z-20 flex flex-col items-center gap-4 px-4 text-center sm:gap-6 sm:bottom-[9vh]">
         <motion.p
-          className="font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-bone/90 sm:text-sm sm:tracking-[0.4em]"
+          className="max-w-md font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-bone/90 sm:text-sm sm:tracking-[0.4em]"
           initial={{ opacity: 0, y: 14 }}
           animate={beat >= 5 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: EASE }}
@@ -143,9 +143,9 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
               data-cursor="play"
               onClick={onDone}
               tabIndex={beat >= 6 ? 0 : -1}
-              className="group flex items-center gap-3 rounded-full bg-bone px-9 py-4 font-sans text-base font-bold tracking-wide text-ink shadow-[0_0_60px_rgba(229,19,43,0.45)] transition hover:bg-white"
+              className="group flex min-h-12 items-center gap-3 rounded-full bg-bone px-8 py-3.5 font-sans text-sm font-bold tracking-wide text-ink shadow-[0_0_60px_rgba(229,19,43,0.45)] transition hover:bg-white active:scale-95 sm:px-9 sm:py-4 sm:text-base"
             >
-              <span className="text-lg transition-transform group-hover:scale-125">▶</span> PLAY
+              <span className="text-base transition-transform group-hover:scale-125 sm:text-lg">▶</span> PLAY
             </button>
           </Magnetic>
         </motion.div>
@@ -154,7 +154,7 @@ export default function OpeningSequence({ onDone }: { onDone: () => void }) {
       <button
         type="button"
         onClick={onDone}
-        className="absolute right-4 top-[calc(7vh+12px)] z-40 rounded-full border border-white/20 px-4 py-2 font-sans text-[11px] font-semibold tracking-[0.2em] text-mist transition hover:border-white/60 hover:text-bone"
+        className="absolute right-4 top-[max(calc(7vh+12px),calc(env(safe-area-inset-top)+8px))] z-40 rounded-full border border-white/20 bg-black/40 px-3.5 py-1.5 font-sans text-[10px] font-semibold tracking-[0.18em] text-mist backdrop-blur transition hover:border-white/60 hover:text-bone sm:px-4 sm:py-2 sm:text-[11px]"
       >
         SKIP INTRO
       </button>
